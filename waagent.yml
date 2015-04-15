@@ -5,6 +5,8 @@ waagent:
   - all-volumes
   volumes:
   - /var/lib/waagent:/var/lib/waagent
+  labels:
+  - io.rancher.os.scope=system
   links:
   - console
   net: host
@@ -16,6 +18,8 @@ waagent:
 sshwatcher:
   privileged: true
   restart: always
+  labels:
+  - io.rancher.os.scope=system
   volumes_from:
   - user-volumes
   links:
